@@ -1,9 +1,13 @@
 package com.applitools.quickstarts;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
 import com.applitools.eyes.selenium.Eyes;
+import com.applitools.eyes.AbstractProxySettings;
 import com.applitools.eyes.RectangleSize;
 import com.applitools.eyes.TestResults;
 
@@ -16,10 +20,16 @@ public class BasicDemo {
         }
 
 		// Use Chrome browser
-		WebDriver driver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+		Proxy proxy = new Proxy()
+			.setHttpProxy("http://ws-fwd-proxy:3129")
+			.setSslProxy("http://ws-fwd-proxy:3129");
+		options.setProxy(proxy);
+		WebDriver driver = new ChromeDriver(options);
 
 		// Initialize the eyes SDK and set your private API key.
 		Eyes eyes = new Eyes();
+		eyes.setProxy(new AbstractProxySettings("http://ws-fwd-proxy:3129", 3219) {});
 
 		// Set the API key from the env variable. Please read the "Important Note"
 		// section above.
