@@ -1,5 +1,5 @@
 # we use a pre-build docker image instead of a Dockerfile, because we can pre-fetch that onto Gitpod infrastructure.
-image: meysholdt/applitools-dev-environment:latest
+image: meysholdt/applitools-dev-environment:v1
 ports:
 
   # open up the port for VNC
