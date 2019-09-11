@@ -22,6 +22,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 @RunWith(JUnit4.class)
 public class BasicDemo {
 
+
+
+
 	private EyesRunner runner;
 	private Eyes eyes;
 	private static BatchInfo batch;
@@ -69,7 +72,7 @@ public class BasicDemo {
 
 		// To see visual bugs after the first run, use the commented line below instead.
 		//driver.get("https://demo.applitools.com/index_v2.html");
-				
+
 		// Visual checkpoint #1 - Check the login page.
 		eyes.checkWindow("Login Window");
 
