@@ -11,6 +11,8 @@ ports:
   - port: 6081-65534
     onOpen: ignore
 
+
+
 # in 'init' we can have bash-code that is executed during the pre-build.
 # We also run 'mvn test' without actually running the tests to ensure all dependencies are fetched.
 # in 'command' we have bash-code that is executen in the Gitpod Terminal View when the user opens a workspace.
@@ -20,4 +22,4 @@ tasks:
     mvn test -Dtest=\!CBasicDemo -DfailIfNoTests=false || true
   command: |
     gp open src/test/java/com/applitools/quickstarts/BasicDemo.java
-    mvn test -Dtest=BasicDemo --no-snapshot-updates 
+    mvn test -Dtest=BasicDemo --no-snapshot-updates
